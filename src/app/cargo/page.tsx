@@ -3,37 +3,29 @@ import { GameFrame, GameLink } from "../game-ui";
 export default function CargoPage() {
   return (
     <GameFrame
-      title="Porão de carga"
-      subtitle="Gestão do navio · Goa"
+      title="Cargo Hold · cargo.jpg"
+      subtitle="Cargo Management"
       backHref="/feitoria"
       footer={
         <>
           <GameLink href="/lisbon" variant="gold">
-            ⛵ Navegar para Lisboa
+            Set Sail to Lisbon →
           </GameLink>
-          <GameLink href="/">Abortar viagem</GameLink>
+          <GameLink href="/">Abort → Ocean</GameLink>
         </>
       }
     >
-      <div
-        className="illustrated-screen illustrated-screen--cargo"
-        style={{ backgroundImage: "url('/ocean.jpg')" }}
-      >
+      <div className="illustrated-screen illustrated-screen--cargo">
         <section className="parchment-card parchment-card--narrow">
-          <p className="card-kicker">Capacidade · 120 / 150</p>
-          <h2>Provisões e mercadorias</h2>
-          <p>Verifique os mantimentos antes de zarpar para Lisboa.</p>
+          <h2>Cargo Management</h2>
+          <p>Background is cargo.jpg now!</p>
           <div className="cargo-list">
-            <CargoMeter label="Provisões da tripulação" amount="40%" width="40%" />
-            <CargoMeter label="Pimenta-preta · 50 caixas" amount="60%" width="60%" />
-            <CargoMeter label="Canela · 22 fardos" amount="28%" width="28%" />
+            <CargoMeter label="🍞 Food" amount="40%" width="40%" />
+            <CargoMeter label="🌑 Pepper 50 crates" amount="60%" width="60%" />
+            <p className="warning-note">If Food &lt; 30%, crew dies!</p>
           </div>
-          <p className="warning-note">
-            Atenção: se as provisões caírem abaixo de 30%, a tripulação corre
-            perigo.
-          </p>
           <GameLink href="/lisbon" variant="gold">
-            Zarpar para Lisboa →
+            Sail to Lisbon → lisbon.jpg
           </GameLink>
         </section>
       </div>

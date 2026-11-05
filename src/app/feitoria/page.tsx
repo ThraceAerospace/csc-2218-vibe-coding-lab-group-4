@@ -4,14 +4,14 @@ export default function FeitoriaPage() {
   return (
     <GameFrame
       title="Feitoria de Goa"
-      subtitle="Entreposto comercial · 1510"
+      subtitle="Goa · 1510"
       backHref="/"
       footer={
         <>
           <GameLink href="/cargo" variant="gold">
-            📦 Gerir carga
+            Manage Cargo →
           </GameLink>
-          <GameLink href="/">Voltar ao oceano</GameLink>
+          <GameLink href="/">Back to Ocean</GameLink>
         </>
       }
     >
@@ -20,41 +20,23 @@ export default function FeitoriaPage() {
         style={{ backgroundImage: "url('/feitoria.jpg')" }}
       >
         <section className="parchment-card">
-          <p className="card-kicker">Mercado atual · Goa</p>
-          <h2>Entreposto da Feitoria</h2>
+          <h2>Goa Feitoria Trading Post</h2>
           <p>
-            Negocie especiarias com os mercadores locais e prepare a sua
-            próxima viagem.
+            Now top is NOT cut! You can see Cinnamon, Cloves, Cardamom prices.
           </p>
           <div className="price-list">
-            <div>
-              <span>Pimenta-preta</span>
-              <strong>12 cruzados / quintal</strong>
-            </div>
-            <div>
-              <span>Canela</span>
-              <strong>20 cruzados / quintal</strong>
-            </div>
-            <div>
-              <span>Cravinho</span>
-              <strong>18 cruzados / quintal</strong>
-            </div>
-            <div>
-              <span>Cardamomo</span>
-              <strong>25 cruzados / quintal</strong>
-            </div>
-          </div>
-          <div className="trust-meter">
-            <div className="trust-meter__label">
-              <span>Confiança do Rajá</span>
-              <strong>62%</strong>
-            </div>
-            <div className="meter-track">
-              <span style={{ width: "62%" }} />
-            </div>
+            <p>
+              <strong>Black Pepper</strong>
+              <br />
+              Buy: 12 Gold in Goa | Sell: 22 Gold in Lisbon
+            </p>
+            <p>
+              <strong>Your Cargo: 50 crates</strong>
+            </p>
+            <p>Bottom Trust Meter now visible too!</p>
           </div>
           <GameLink href="/cargo" variant="gold">
-            Gerir carga →
+            Manage Cargo → cargo.jpg
           </GameLink>
         </section>
       </div>

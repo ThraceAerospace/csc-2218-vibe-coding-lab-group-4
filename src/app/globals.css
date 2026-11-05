@@ -180,9 +180,10 @@ a:focus-visible {
   inset: 0;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: contain;
   transition:
-    transform 1.8s ease-in-out,
-    background-size 1.8s ease-in-out;
+    transform 2s ease-in-out,
+    background-size 2s ease-in-out;
 }
 
 .map-port {
@@ -228,13 +229,13 @@ a:focus-visible {
   filter: drop-shadow(0 0 8px #f5d77a);
   transform: translate(-50%, -50%);
   transition:
-    left 1.8s ease-in-out,
-    top 1.8s ease-in-out,
+    left 2s ease-in-out,
+    top 2s ease-in-out,
     transform 250ms ease;
 }
 
 .map-ship--storm {
-  animation: storm-rock 400ms ease-in-out 2 alternate;
+  animation: storm-rock 200ms ease-in-out 2 alternate;
 }
 
 .map-zoom {
@@ -258,15 +259,14 @@ a:focus-visible {
   padding: clamp(18px, 5vw, 48px);
   background-color: #1a1208;
   background-position: center;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .illustrated-screen--cargo {
-  background-position: center 56%;
-}
-
-.illustrated-screen--lisbon {
   background-position: center;
+  background-image: none;
+  background-color: #2b1c0e;
 }
 
 .parchment-card {

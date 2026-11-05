@@ -9,9 +9,9 @@ This project is a React application built with Next.js 16 and the App Router. It
 - `/cargo` — cargo capacity and provisions overview.
 - `/lisbon` — voyage completion and profit summary.
 
-The screens are implemented as React components in the App Router. Sailing controls on the route map use client-side state; navigation between screens uses Next.js links. The displayed prices, capacity, and voyage rewards remain illustrative demo values and are not backed by persistent game state.
+The screens are implemented as React components in the App Router. Sailing controls on the route map use client-side state; navigation between screens uses Next.js links. Screen text and displayed values reproduce the original mockup content; these remain demo values and are not backed by persistent game state.
 
-Static map and screen art lives in `public/` and is referenced with root-relative URLs. The original standalone HTML prototypes have been replaced by their React route implementations.
+Static map and screen art lives in `public/` and is referenced with root-relative URLs. The original standalone HTML prototypes have been replaced by their React route implementations. The source cargo page referred to `cargo.jpg`, which was not supplied; the cargo screen therefore retains the original plain background rather than substituting a different illustration.
 
 ## Getting started
 

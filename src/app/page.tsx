@@ -9,7 +9,7 @@ const voyage = [
     left: "19%",
     top: "34%",
     progress: 0,
-    status: "In Lisbon — ready to sail",
+    status: "In LISBOA - Ready to Zoom",
     zoom: 1,
     origin: "18% 32%",
   },
@@ -17,7 +17,7 @@ const voyage = [
     left: "28%",
     top: "58%",
     progress: 25,
-    status: "Crossing the Atlantic — Kraken sighted!",
+    status: "Zooming Atlantic - Kraken! 🐙",
     zoom: 1.8,
     origin: "28% 58%",
   },
@@ -25,7 +25,7 @@ const voyage = [
     left: "50%",
     top: "86%",
     progress: 50,
-    status: "Rounding the Cape — storm conditions",
+    status: "ZOOM x2 - Cape Storms ⛈️",
     zoom: 2.2,
     origin: "50% 86%",
   },
@@ -33,7 +33,7 @@ const voyage = [
     left: "65%",
     top: "60%",
     progress: 75,
-    status: "Indian Ocean — sea serpent sighted!",
+    status: "ZOOM x1.8 - Sea Serpent 🐍",
     zoom: 1.8,
     origin: "65% 60%",
   },
@@ -41,7 +41,7 @@ const voyage = [
     left: "77%",
     top: "40%",
     progress: 100,
-    status: "Arrived in Goa!",
+    status: "Arrived GOA! Zoom out",
     zoom: 1,
     origin: "77% 40%",
   },
@@ -70,17 +70,18 @@ export default function Home() {
 
   return (
     <GameFrame
-      title="Mapa da Rota das Especiarias"
-      subtitle="Lisboa → Goa · 1500s"
+      title="Mapa da Rota · Zoom Mode"
       status={`${current.progress}% · ${current.status}`}
       footer={
         <>
           <button className="game-button game-button--gold" onClick={sail}>
-            {current.progress === 100
-              ? "Chegamos! → Feitoria"
-              : `⛵ Navegar · ${current.progress}%`}
+            {current.progress === 0
+              ? "🔍⛵ Set Sail with Zoom →"
+              : current.progress === 100
+                ? "Arrived! → Feitoria"
+                : `Zoom ${current.zoom}x - ${current.progress}% Continue`}
           </button>
-          <GameLink href="/feitoria">Saltar para Goa</GameLink>
+          <GameLink href="/feitoria">Skip to Goa</GameLink>
         </>
       }
     >
@@ -90,15 +91,14 @@ export default function Home() {
             className="map-art"
             style={{
               backgroundImage: "url('/ocean.jpg')",
-              backgroundSize: step === 0 ? "contain" : "cover",
               transform: `scale(${current.zoom})`,
               transformOrigin: current.origin,
             }}
           >
             <span className="map-port map-port--lisbon">Lisboa</span>
-            <span className="map-port map-port--cape">Cabo da Boa Esperança</span>
+            <span className="map-port map-port--cape">Cape</span>
             <span className="map-port map-port--goa">Goa</span>
-            <span className="map-port map-port--locked">Malaca · bloqueada</span>
+            <span className="map-port map-port--locked">Malacca (Locked)</span>
             <span
               className={`map-ship${step === 2 ? " map-ship--storm" : ""}`}
               style={{ left: current.left, top: current.top }}
@@ -109,7 +109,7 @@ export default function Home() {
             </span>
           </div>
           <span className="map-zoom" aria-live="polite">
-            Zoom {current.zoom}×
+            🔍 Zoom: {current.zoom}x
           </span>
         </div>
       </div>

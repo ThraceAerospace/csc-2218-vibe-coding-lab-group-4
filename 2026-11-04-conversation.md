@@ -49,3 +49,21 @@ Converted the four HTML prototypes into React App Router screens: `/`, `/feitori
 Moved the three existing illustrations into `public/`; the cargo screen uses the ocean map because no cargo-specific image was supplied. Updated `README.md`, `AGENTS.md`, and page metadata to describe the actual routes and demo data. The original standalone HTML files were removed.
 
 Validation: `npm run lint`, `npm run build`, and `git diff --check` passed. HTTP smoke checks returned `200` for all four routes and all three image assets. Browser automation could not launch because the environment does not have the Playwright Chromium executable installed.
+
+## User
+
+does the log contain everything
+
+## Assistant
+
+No. The transcript contained the prompts and user-facing assistant summaries, but omitted tool calls and detailed tool outputs; it also did not include the image attachments themselves.
+
+## User
+
+in the previous refactor, was any behavior changed from the original HTML files? No behvior was meant to change, only refactor existing behavior to work with next.js
+
+## Assistant
+
+Yes. The core route sequence was retained, but I unintentionally changed some screen content and presentation: the cargo page used the ocean art despite the original cargo image being missing, extra cargo/spice/trust values were introduced, Lisbon gained an extra Feitoria link, and some labels/zoom display differed from the HTML. I restored the original mockup’s visible values and navigation, reverted the cargo screen to a plain background, and kept the missing `cargo.jpg` noted rather than substituting another image.
+
+Verification after these corrections: `npm run lint`, `npm run build`, and `git diff --check` passed.

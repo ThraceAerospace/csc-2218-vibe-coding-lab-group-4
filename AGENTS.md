@@ -21,9 +21,9 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Game application
 
 - `/`, `/feitoria`, `/cargo`, and `/lisbon` are the current game screens.
-- Demo prices, cargo amounts, and rewards are illustrative and are not persisted game state.
+- Prices, cargo amounts, and rewards reproduce the original mockup's demo content and are not persisted game state.
 - Navigation between screens should use Next.js `Link` components. Do not reintroduce standalone HTML files in `src/app`.
-- The map and screen illustrations are stored in `public/`; there is no cargo-specific image, so the cargo screen uses the ocean map background.
+- The map and screen illustrations are stored in `public/`. There is no cargo-specific image; preserve the cargo mockup's plain background instead of substituting unrelated art.
 
 ## Validation
 

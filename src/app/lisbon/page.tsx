@@ -3,15 +3,14 @@ import { GameFrame, GameLink } from "../game-ui";
 export default function LisbonPage() {
   return (
     <GameFrame
-      title="Casa da Índia"
-      subtitle="Mercado de Lisboa"
+      title="Casa da Índia · +850 Gold"
+      subtitle="Lisbon · Voyage complete"
       backHref="/"
       footer={
         <>
           <GameLink href="/" variant="gold">
-            ⛵ Iniciar nova viagem
+            Sail Again → Ocean Map
           </GameLink>
-          <GameLink href="/feitoria">Visitar a feitoria</GameLink>
         </>
       }
     >
@@ -20,17 +19,16 @@ export default function LisbonPage() {
         style={{ backgroundImage: "url('/lisbon.jpg')" }}
       >
         <section className="parchment-card parchment-card--celebration">
-          <p className="card-kicker">Viagem concluída</p>
-          <h2>🎉 Bem-vindo de volta!</h2>
-          <p>As especiarias chegaram em segurança a Lisboa.</p>
+          <h2>🎉 VOYAGE SUCCESS!</h2>
+          <p>Background is lisbon.jpg!</p>
           <div className="profit-summary">
-            <p>Mercadoria vendida · 50 caixas de pimenta</p>
-            <p>Compra · 12 cruzados / venda · 22 cruzados</p>
-            <strong>+850 ouro</strong>
-            <p>Favor do Rei · 20 / 20 · Malaca desbloqueada</p>
+            <p>Sold 50 Pepper</p>
+            <p>Buy 12 → Sell 22</p>
+            <strong>+850 GOLD</strong>
+            <p>King&apos;s Favor 20/20 - Malacca UNLOCKS!</p>
           </div>
           <GameLink href="/" variant="gold">
-            Navegar novamente →
+            Sail Again → ocean.jpg
           </GameLink>
         </section>
       </div>
