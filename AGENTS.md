@@ -13,15 +13,17 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Application structure
 
 - This repository uses Next.js 16, React, TypeScript, and the App Router.
-- The active root route is `src/app/page.tsx`; shared document metadata and layout live in `src/app/layout.tsx`.
-- Implement application screens as React components in route `page.tsx` files. Standalone `.html` files placed in `src/app` are not App Router routes.
+- The root route is `src/app/page.tsx`; nested screens use route folders with `page.tsx` (for example, `src/app/feitoria/page.tsx`).
+- Shared metadata and document layout live in `src/app/layout.tsx`; common UI such as the game frame is in `src/app/game-ui.tsx`.
+- Keep interactive UI in client components and use server components for screens that do not need browser state.
 - Put URL-addressable static assets in the root `public/` directory and reference them with root-relative paths (for example, `/ocean.jpg`).
 
-## Prototype files
+## Game application
 
-- `src/app/index.html`, `cargo.html`, `feitoria.html`, and `lisbon.html` are standalone screen prototypes, not active application routes or game logic.
-- Their sibling JPGs are visual references. `cargo.html` refers to `cargo.jpg`, which is not currently in the repository.
-- When porting a prototype, reimplement its interactions and navigation in React and connect them to application state; do not assume the HTML mockup is served by Next.js.
+- `/`, `/feitoria`, `/cargo`, and `/lisbon` are the current game screens.
+- Demo prices, cargo amounts, and rewards are illustrative and are not persisted game state.
+- Navigation between screens should use Next.js `Link` components. Do not reintroduce standalone HTML files in `src/app`.
+- The map and screen illustrations are stored in `public/`; there is no cargo-specific image, so the cargo screen uses the ocean map background.
 
 ## Validation
 
