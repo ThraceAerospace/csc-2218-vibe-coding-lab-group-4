@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Spice Route Trading Game
 
-## Getting Started
+This project is a React application built with Next.js 16 and the App Router. The repository currently contains the default Next.js landing page plus standalone HTML screen prototypes for a Portuguese spice-trading voyage.
 
-First, run the development server:
+## Current project state
+
+- The application root at `/` is implemented by `src/app/page.tsx` and still shows the default Next.js starter screen.
+- `src/app/index.html`, `cargo.html`, `feitoria.html`, and `lisbon.html` are visual and interaction prototypes. They are not Next.js routes, and their inline navigation does not connect to the React app.
+- `src/app/ocean.jpg`, `feitoria.jpg`, and `lisbon.jpg` are prototype backgrounds referenced by those standalone HTML files. The cargo prototype also references `cargo.jpg`, which is not present.
+- The prototype pages contain sample game values and demo interactions; they are not connected to shared game state or implemented game logic.
+
+When integrating a prototype into the app, implement it with React components and App Router route files (for example, `src/app/page.tsx` for `/` or `src/app/feitoria/page.tsx` for `/feitoria`). For assets referenced by URL, place them in `public/` and use root-relative URLs such as `/ocean.jpg`. Keep route navigation and game state in the React app rather than relying on the prototypes' standalone HTML links and inline scripts.
+
+## Getting started
+
+Install dependencies and start the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the current React app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Validation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Useful documentation
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [Next.js App Router documentation](https://nextjs.org/docs/app)
+- [React documentation](https://react.dev/learn)
